@@ -1,9 +1,11 @@
 package br.com.quintinodigital.sisgefinapi.controller;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +15,7 @@ import br.com.quintinodigital.sisgefinapi.entity.ContaBancariaEntity;
 import br.com.quintinodigital.sisgefinapi.service.ContaBancariaService;
 
 @RestController
-@RequestMapping(name = "conta-bancaria")
+@RequestMapping("conta-bancaria")
 @CrossOrigin
 public class ContaBancariaController implements Serializable {
 
@@ -25,6 +27,11 @@ public class ContaBancariaController implements Serializable {
 	@PostMapping
 	public ContaBancariaEntity saveOne(@RequestBody ContaBancariaEntity contaBancariaEntity) {
 		return this.contaBancariaService.saveOne(contaBancariaEntity);
+	}
+	
+	@GetMapping
+	public List<ContaBancariaEntity> findAll() {
+		return this.contaBancariaService.findAll();
 	}
 
 }

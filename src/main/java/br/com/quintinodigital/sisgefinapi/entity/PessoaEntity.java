@@ -21,7 +21,7 @@ public class PessoaEntity implements Serializable {
 	@Column(name = "CODIGO", nullable = false)
 	private Long codigo;
 	
-	@Column(name = "NOME", nullable = false)
+	@Column(name = "NOME", unique = true, nullable = false)
 	private String nome;
 	
 	public PessoaEntity() { }

@@ -1,6 +1,7 @@
 package br.com.quintinodigital.sisgefinapi.service;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,10 @@ public class ContaBancariaService implements Serializable {
 	
 	public ContaBancariaEntity saveOne(ContaBancariaEntity contaBancariaEntity) {
 		return this.contaBancariaRepository.save(contaBancariaEntity);
+	}
+	
+	public List<ContaBancariaEntity> findAll() {
+		return this.contaBancariaRepository.findAll();
 	}
 
 }
