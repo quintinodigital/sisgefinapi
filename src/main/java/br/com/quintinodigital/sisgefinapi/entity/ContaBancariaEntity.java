@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name = "TB_CONTA_BANCARIA")
 public class ContaBancariaEntity implements Serializable {
@@ -40,6 +42,7 @@ public class ContaBancariaEntity implements Serializable {
 	@Column(name = "SALDO_INICIAL", nullable = false)
 	private Double saldoInicial;
 	
+	@JsonProperty("tipoContaBancaria")
 	@OneToOne
 	@JoinColumn(name = "ID_TIPO_CONTA_BANCARIA")
 	private TipoContaBancariaEntity tipoContaBancariaEntity;
